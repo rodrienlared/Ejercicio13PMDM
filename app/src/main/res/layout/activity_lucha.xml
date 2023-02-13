@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Lucha">
+
+    <TextView
+        android:id="@+id/vidaTextoPersonaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        android:text="Vida restante: "
+        app:layout_constraintStart_toEndOf="@+id/imagenPersonaje"
+        app:layout_constraintTop_toBottomOf="@+id/vidaRestanteTotalEnemigo" />
+
+    <TextView
+        android:id="@+id/vidaRestanteTotalPersonaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:text="Test"
+        app:layout_constraintStart_toEndOf="@+id/imagenPersonaje"
+        app:layout_constraintTop_toBottomOf="@+id/vidaTextoPersonaje" />
+
+    <ImageView
+        android:id="@+id/imagenVidaPersonaje"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenPersonaje"
+        app:srcCompat="@drawable/vida_completa" />
+
+    <ImageView
+        android:id="@+id/imagenVidaEnemigo"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vida_completa" />
+
+    <ImageView
+        android:id="@+id/imagenEnemigo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenVidaEnemigo"
+        app:srcCompat="@drawable/guerrero" />
+
+    <ImageView
+        android:id="@+id/imagenPersonaje"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenEnemigo"
+        app:srcCompat="@drawable/kratos" />
+
+    <Button
+        android:id="@+id/atacar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Atacar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenVidaPersonaje" />
+
+    <Button
+        android:id="@+id/huirBatalla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Huir"
+        app:layout_constraintEnd_toStartOf="@+id/curarse"
+        app:layout_constraintStart_toEndOf="@+id/atacar"
+        app:layout_constraintTop_toBottomOf="@+id/imagenVidaPersonaje" />
+
+    <Button
+        android:id="@+id/curarse"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Curarse"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenVidaPersonaje" />
+
+    <TextView
+        android:id="@+id/vidaTextoEnemigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="Vida restante: "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenEnemigo" />
+
+    <TextView
+        android:id="@+id/vidaRestanteTotalEnemigo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:text="Test"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vidaTextoEnemigo" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
