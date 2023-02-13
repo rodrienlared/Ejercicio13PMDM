@@ -75,19 +75,20 @@ class Lucha : AppCompatActivity() {
                 else{
                     binding.vidaRestanteTotalEnemigo.text = "0"
 
+                    personaje.monedero += 100
                     if(personaje.mochila.size + 3 <= personaje.LIMITE_MOCHILA){
                         for(i in 1..3)
                             personaje.mochila.add(ObjetoJuego())
-                        alerta("¡Has ganado!\n\nLas recompensas no han podido ser guardadas. No hay suficiente espacio de almacenamiento en la mochila.\n\nLas monedas han sido guardadas correctamente en tu monedero. Pulsa \"Continuar\" para volver a inicio.")
-                    } else
-                        alerta("¡Has ganado!\n\nLas recompensas han sido guardadas correctamente en tu mochila. Pulsa \"Continuar\" para volver a inicio.")
-
-                    personaje.monedero += 100
+                        aplicarCambiosPersonaje(personaje)
+                        alerta("¡Has ganado!\n\nLas recompensas han sido guardadas.\n\nLas monedas han sido guardadas correctamente en tu monedero. Pulsa \"Continuar\" para volver a inicio.")
+                    } else{
+                        aplicarCambiosPersonaje(personaje)
+                        alerta("¡Has ganado!\n\nLas recompensas no han podido ser guardadas. Pulsa \"Continuar\" para volver a inicio.")
+                    }
                 }
             }
-            else {
+            else
                 alertaWithEnemyAttack("El ataque ha fallado. Es el turno del enemigo", personaje)
-            }
 
             setAndCheckImagesForHealth()
             aplicarCambiosPersonaje(personaje)
@@ -108,14 +109,17 @@ class Lucha : AppCompatActivity() {
         } else {
             binding.vidaRestanteTotalEnemigo.text = "0"
 
+            personaje.monedero += 100
             if(personaje.mochila.size + 3 <= personaje.LIMITE_MOCHILA){
                 for(i in 1..3)
                     personaje.mochila.add(ObjetoJuego())
+                aplicarCambiosPersonaje(personaje)
                 alerta("¡Has ganado!\n\nLas recompensas han sido guardadas correctamente en tu mochila.\n\nLas monedas han sido guardadas correctamente en tu monedero. Pulsa \"Continuar\" para volver a inicio.")
-            } else
+            } else{
+                aplicarCambiosPersonaje(personaje)
                 alerta("¡Has ganado!\n\nLas recompensas no han podido ser guardadas, pero las monedas ya se encuentran en tu monedero. Pulsa \"Continuar\" para volver a inicio.")
+            }
 
-            personaje.monedero += 100
         }
     }
 
